@@ -16,7 +16,7 @@ int main() {
     for(int i = 0;i<np;i++){bank[i] = 0;}
     string people[np];
     for(int i = 0;i<np;i++){
-        cin>>people[np];
+        cin>>people[i];
     }
     while(true){
         int i;
