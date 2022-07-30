@@ -30,7 +30,7 @@ int main() {
         bank[i] = bank[i] - amount;
         cin>>number;
         if(number == 0){
-            break;
+            continue;
         }
         left = amount%number;
         amount = amount - left;
@@ -40,8 +40,8 @@ int main() {
             int k;
             cin>>name;
             for(k = 0;k<np;k++){
-            if(name == people[np]){
-                break;
+                if(name == people[np]){
+                    break;
                 }
             }
             bank[k] = bank[k] + each;
@@ -49,10 +49,7 @@ int main() {
         }
     }
     for(int a = 0;a<np;a++){
-        cout<<people[a]<<" "<<bank[a];
-        if((a+1)<np){
-            cout<<"\n";
-        }
+        cout<<people[a]<<" "<<bank[a]<<endl;
     }
 
 }
