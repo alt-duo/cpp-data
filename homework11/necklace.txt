@@ -1,0 +1,5 @@
+first, we cin all of the data, the length, and the string. Then we can copy 
+the string 3 times and then use the data. Use the string at the middle.
+To use the string at the middle, use the length of one string, then get the index 2x.
+cut the string at any place in the middle, and count up indexes or down
+and get the letter in the starting index. then use a for loop and get all the starting points.
