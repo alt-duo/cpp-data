@@ -1,0 +1,4 @@
+first make a stack.
+then cin the contents in to string s
+then after that turn it to lowercase
+then for every new letter put it in stack and if there is a match then remove it.

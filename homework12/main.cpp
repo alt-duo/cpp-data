@@ -1,40 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
-string removespace(string s){
-    string temp;
-    for(int i=0;i<s.length();i++){
-        if(s[i]!=' '){
-            temp+=s[i];
-        }
-    }
-    return temp;
-}
 int main(){
     bool found = false;
-    string s;
-    stack <int> m;
+    string s, t, last;
+    char temp1;
+    stack <char> m;
     cin>>s;
+    t = s;
+    for(int j = 0;j<t.length();j++){
+        s[j] = tolower(s[j]);
+    }
     for(int i = 0;i<s.length();i++){
-        s[i] = tolower(s[i]);
-    }
-    int temp1 = s.length();
-
-    found = false;
-    for(int j = 0;j<temp1;j++){
-        if(s[j]==s[j+1]){
-            found = true;
-            s[j] = ' ';
-            s[j+1] = ' ';
-            temp1 = temp1-2;
-            s = removespace(s);
+        if(s[i]==m.top()){
+            m.pop();
+        }else{
+            m.push(t[i]);
         }
-
-
     }
-    if(found = false){
-        cout<<"-1"<<endl;
+    while(m.empty()==false){
+        last = m.top()+last;
+        m.pop();
+        cout<<last;
     }
-
-
+    if(m.empty()){
+        cout<<-1<<endl;
+    }
+    
+    
     return 0;
 }
+//Segmentation fault cpp
