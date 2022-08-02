@@ -1,0 +1,14 @@
+CLASS NOTES:
+
+if only one number is inserted into the queue, the front() and back()
+are both the same.
+Stack is first in first out basis. there are many functions:
+empty() //self explanatory
+pop()
+front()//get the first value
+push()//push a number to the end of queue
+size()//amount of elements
+there is no back in a queue
+
+you have to include queue:
+#include <queue>
