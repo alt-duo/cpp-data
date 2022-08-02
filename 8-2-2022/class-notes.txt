@@ -12,3 +12,7 @@ there is no back in a queue
 
 you have to include queue:
 #include <queue>
+
+Learned things:
+    how to use stack and queue
+    recursion
