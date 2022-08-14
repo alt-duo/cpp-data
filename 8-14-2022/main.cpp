@@ -1,19 +1,20 @@
 #include <iostream>
 using namespace std;
+int nums[1001];
 int main(){
     freopen("random.in","r",stdin);
     freopen("random.out","w",stdout);
-    int nums[1001];
+    
     
     int n;
     for(int i = 0; i <= 1000; i++){
         nums[i] = 0;
     }
     cin>>n;
-    int starting[n];
+    int x;
     for(int i = 0; i < n; i++){
-        cin>>starting[i];
-        if(nums[i+1] == 0){
+        cin>>x;
+        if(x == 0){
             nums[i+1] = 1;
         }
     }
