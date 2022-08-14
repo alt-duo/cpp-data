@@ -1,3 +1,5 @@
+
+//second homework
 #include <iostream>
 using namespace std;
 int main() {
