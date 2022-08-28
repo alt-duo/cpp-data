@@ -10,7 +10,7 @@ int main() {
   for(int starting = 0; starting<n;starting++){
     for(int first = starting;first<=n-1;first++){
       for(int second = first+1;second<=n;second++){
-        if(first+second==m){
+        if(nums[first]+nums[second]==m){
           counter++;
         }
       }
@@ -19,3 +19,4 @@ int main() {
   cout<<counter;
 
 }
+//5 7 5 2 3 4 1
