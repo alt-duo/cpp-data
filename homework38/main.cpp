@@ -1,42 +1,67 @@
 #include <bits/stdc++.h>
 using namespace std;
-int a1[1000000]={0};
+
 void  multiplybig(int biga[],int scalarb){
     int pos;
-    for (int i=1;i<=biga[0];i++) 
+    for (int i=1;i<=biga[0];i++)
         biga[i]*=scalarb;
     for (int i=1;i<=biga[0];i++){
         biga[i+1]+=biga[i]/10;
         biga[i]%=10;
-    } 
+    }
     biga[0]++;
     while (biga[biga[0]]/10!=0) {
         biga[biga[0]+1]=biga[biga[0]]/10;
         biga[biga[0]]%=10;
         biga[0]++;
-        
+
     }
     return;
-    
+
 }
 
 int main() {
-    long long x = 0, j, n;
+    int a1[500]={0};
+    long long j, n, temp1, last;
+    int a, x;
     string s;
+    string ans;
     cin>>s>>n;
-    for(int i = s.length()-1;i>=0;i--){
-        a1 = s[i]-'0';
-    }
-    for(int j = s.length()-1;j>=0;j--){
-        for(int i = 1000000-1;i>=0;i--){
-           
-            if(x==0){
-                a1[i]=a1[i]*s[j]-'0';
-            }else{
-                if() 
-            }
+    a1[0] = 500;
+    for(int i = s.length();i>=1;i--){
 
-        }
-        x++;
+        a1[i] = s[i-1]-'0';
     }
+    for(int q = 0;q<n;q++){
+        for(int j = s.length()-1;j>=0;j--){
+            a = s[j]-'0';
+
+            while(a*(x*10)>=10){
+                for(int j = 0;j<=499;j++){
+                    temp1 = a1[j+1];
+                    a1[j] = a1[j+1];
+                }
+                a1[0] = 0;
+                a=a-10;
+            }
+            multiplybig(a1, a);
+            x++;
+        }
+    }
+    for(int i = 1;i<=499;i++){
+        if(a1[i]!=0){
+            last = i;
+        }
+    }
+    if(last<=500){
+        for(int i = 1;i<500;i++){
+            ans = ans+to_string(a1[i]);
+        }
+    }
+    else{
+        for(int i = last-499;i<=last;i++){
+            ans = ans+to_string(a1[i]);
+        }
+    }
+    cout<<stoll(ans);
 }
