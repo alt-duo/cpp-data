@@ -19,14 +19,24 @@ void  multiplybig(int biga[],int scalarb){
     return;
     
 }
+
 int main() {
-    int n;
+    long long x = 0, j, n;
     string s;
     cin>>s>>n;
     for(int i = s.length()-1;i>=0;i--){
-        a1 = s[i];
+        a1 = s[i]-'0';
     }
-    for(int i = 0;i<s.length();i++){
-        
+    for(int j = s.length()-1;j>=0;j--){
+        for(int i = 1000000-1;i>=0;i--){
+           
+            if(x==0){
+                a1[i]=a1[i]*s[j]-'0';
+            }else{
+                if() 
+            }
+
+        }
+        x++;
     }
 }
