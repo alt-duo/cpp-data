@@ -1,27 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int flag[27] = {0};
     string s;
-    int x, occur;
     cin>>s;
+    int flag[26] = {0};
+    vector<char> v;
     for(int i = 0;i<s.length();i++){
-        x = s[i]+1-'a';
-        cout<<x<<" ";
-        flag[x]++;
+        flag[s[i]-'a']++;
     }
-    cout<<endl;
-
     for(int i = 0;i<=25;i++){
         if(flag[i]==1){
-            occur = i;
-            break;
+            v.push_back(char('a'+i));
         }
     }
-    for(int i = 0;i<=s.length();i++){
-        for(int j = 0;j<26;j++){
-            if(s[i]==(occur+'a')){
-                cout<<i;
+    cout<<endl;
+    for(int i = 0;i<s.length();i++){
+        for(int j = 0;j<v.size();j++){
+            if(s[i]==v[j]){
+                cout<<i+1;
                 return 0;
             }
         }
