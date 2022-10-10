@@ -2,6 +2,8 @@
 using namespace std;
 int main() {
     string s;
+    char ans;
+    int total = 0;
     int x, max = 0;
     getline(cin, s);
     for(int i = 0;i<s.length();i++){
@@ -10,7 +12,13 @@ int main() {
             max=x;
         }
     }
-    cout<<char(max-1+'a');
+    ans = char(max-1+'a');
+    for(int i = 0;i<s.length();i++){
+        if(ans==s[i]){
+            total++;
+        }
+    }
+    cout<<ans<<" "<<total;
 
     
 }
