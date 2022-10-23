@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int count = 0;
+
+    int temp;
+    bool direction;
+    bool done = false;
+
+
+    vector<int> v(n);
+    vector<int> v1(n);
+
+    int bessie, index;
+    for(int i = 0;i<n;i++){
+        cin>>v[i];
+        v1[i]=v[i];
+    }
+    sort(v1.begin(), v1.end());
+    for(int i = 0;i<n;i++){
+        if(v[i]!=v1[i]){
+            if(v1[i]==v[i+1]){
+                bessie = v[i];
+                index = i;
+            }else if(v[i]==v1[i+1]){
+                bessie = v1[i];
+                for(int j = 0;j<n;j++){
+                    if(v[0]==v1[j]){
+                        index = j;
+                    }
+                }
+            }
+
+        }
+    }
+    if(index==n-1){
+        direction = false;
+    }else if(index = 0){
+        direction = true;
+    }else{
+        if(v[index-1]>v[index]){
+            direction = false;
+        }else if(v[index+1]<v[index]){
+            direction = true;
+        }
+    }
+    if(direction==true){
+    if(v[index+1]<v[index]){
+        while(!(v[index]<=v[index+1])){
+        temp = v[index+1];
+        v[index+1] = v[index];
+        v[index] = temp;
+        index = index+1;
+        if(v[index+1]!=temp){
+            count++;
+        }
+        }
+
+    }
+    }
+    if(direction==false){
+    if(v[index-1]>v[index]){
+        while(!(v[index]>=v[index-1])){
+        temp = v[index-1];
+        v[index-1] = v[index];
+        v[index] = temp;
+        index = index-1;
+        if(v[index-1]!=temp){
+            count++;
+        }
+        }
+
+    }
+    }
+    
+
+    return 0;
+
+
+}
