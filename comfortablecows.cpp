@@ -3,16 +3,13 @@ using namespace std;
 int main() {
     vector<int> x;
     vector<int> y;
-    
     int n;
-    int x2, y2;
     int x1,y1;
+    int x2, y2;
+    int x3, y3;
     int count;
-    int found;
-    int found1;
-
-    int total = 0;
     int temp;
+    int total = 0;
     bool notfound;
     cin>>n;
     for(int c = 0;c<n;c++){
@@ -26,39 +23,48 @@ int main() {
         
         for (int i = 0;i<x.size();i++) {
             count = 0;
-            for(int q = 0;q<4;q++){
-                
-                x1 = x[i];
-                y1 = y[i];
-                if(q==0){
-                    x1 = x[i]-1;
-                }else if(q==1){
-                    x1 = x[i]+1;
-                }else if(q==2){
-                    y1 = y[i]-1;
-                }else if(q==3){
-                    y1 = y[i]+1;
-                }
-                try{
-                    for(int j = 0;j<x.size();j++){
-                        if(x[j]==x1){
-                            if(y[j]==y1){
-                                count++;
-                            }
-                        }
-                    }
-                    temp = x[x1]+y[y1];
-                    notfound = false;
-                }catch(out_of_range const&){
-                    notfound = true;
-                }
 
                 
+            x1 = x[i];
+            x2 = x[i]-1;
+            x3 = x[i]+1;
+
+            y1 = y[i];
             
-            }
-                if(count==3){
-                    total++;
+            y2 = y[i]-1;
+            y3 = y[i]+1;
+
+            try{
+                for(int j = 0;j<x.size();j++){
+                    if(x[j]==x1){
+                        if(y[j]==y2){
+                            count++;
+                        }
+                        if(y[j]==y3){
+                            count++;
+                        }
+                    }
+                    if(x[j]==x2){
+                        if(y[j]==y1){
+                            count++;
+                        }
+                    }
+                    if(x[j]==x3){
+                        if(y[j]==y1){
+                            count++;
+                        }
+                    }
                 }
+                temp = x[x1]+y[y1];
+            }catch(out_of_range const&){
+                notfound = true;
+            }
+
+            
+        
+            if(count==3){
+                total++;
+            }
             
             
             
